@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>طلافروشی مقیمی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- منوی سه‌نقطه‌ای -->
+  <div class="menu">
+    <button class="menu-btn">⋮</button>
+    <div class="menu-content" id="menuContent">
+      <a href="javascript:void(0)" onclick="exitApp()">خروج</a>
+      <a href="javascript:void(0)" onclick="showModal('aboutModal')">درباره</a>
+      <a href="javascript:void(0)" onclick="showModal('devModal')">توسعه‌دهنده</a>
+      <div class="moving-text">طلا فروشی مقیمی</div>
+    </div>
+  </div>
+
+  <!-- تیتر اصلی -->
+  <h1>طلا فروشی مقیمی</h1>
+
+  <!-- دکمه نصب برنامه -->
+  <button id="installBtn" class="install-btn" style="display:none" onclick="installPWA()">📲 نصب برنامه</button>
+
+  <!-- فرم محاسبه -->
+  <div class="container">
+    <label>وزن (گرم):</label>
+    <input type="number" id="weight">
+
+    <label>قیمت هر گرم (تومان):</label>
+    <input type="number" id="pricePerGram">
+
+    <label>درصد اجرت (%):</label>
+    <input type="number" id="makingPercent">
+
+    <label>درصد سود (%):</label>
+    <input type="number" id="profitPercent">
+
+    <label>درصد مالیات (%):</label>
+    <input type="number" id="taxPercent">
+
+    <button onclick="calculate()">محاسبه</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <!-- پنجره درباره -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+      <h2>درباره</h2>
+      <p>برنامه کاربردی با پشتیبانی گروه برنامه‌نویسی مقیمی</p>
+    </div>
+  </div>
+
+  <!-- پنجره توسعه‌دهنده -->
+  <div id="devModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('devModal')">&times;</span>
+      <h2>توسعه‌دهنده</h2>
+      <p>محمدرضا مقیمی ده ارباب</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
